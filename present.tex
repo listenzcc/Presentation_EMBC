@@ -52,11 +52,20 @@
     \frametitle{Introduction}
     Motivation
 
+    \begin{itemize}
+        \item Little has been known about the temporal dynamics of the neural activity that triggered by target stimuli in RSVP.
+        \item Besides the successful engineering applications of RSVP-BCI, the underlying neural activity is still unclear.
+    \end{itemize}
 \end{frame}
 
 \begin{frame}
     \frametitle{Introduction}
     This work
+
+    \begin{itemize}
+        \item The temporal dynamic of target event-related responses in a static RSVP paradigm was investigated using paired structural MRI and MEG signal with different frequency bands.
+        \item The MVPA was applied on MEG epoch responses to estimate the decoding power dynamic.
+    \end{itemize}
 
 \end{frame}
 
@@ -70,19 +79,23 @@
 \subsection{Task Design}
 \begin{frame}
     \frametitle{Task Design}
-    Subjects
 
-    Stimulus
+    \begin{itemize}
+        \item [Subjects] Recruited 10 college students (7 males and 3 females, aged 23.79±3.6).
+        \item [Design] During a block, 100 pictures were shown to the subject in random ordered sequences at a rate of 10 Hz.
+        \item [Ratio] The chance of target pictures (odd ball) was set to 4\%.
+    \end{itemize}
 
-    Scanners
 \end{frame}
 
 \subsection{MEG and MRI acquisition}
 \begin{frame}
     \frametitle{MEG and MRI acquisition}
-    MEG
 
-    MRI
+    \begin{itemize}
+        \item [MEG] MEG data were scanned with a whole-head CTF MEG system with 272 channels (MISL-CTF DSQ-3500, Vancouver, BC, Canada) at the MEG Center of Institute of Biophysics, Chinese Academy of Sciences.
+        \item [MRI] MRI data were scanned with a 3.0 T MRI scanner (Siemens, Germany) at the MRI Center of Institute of Biophysics, Chinese Academy of Sciences.
+    \end{itemize}
 
 \end{frame}
 
@@ -93,30 +106,55 @@
     \tableofcontents[currentsection, hideothersubsections]
 \end{frame}
 
-\subsection{MEG and MRI Preprocessing}
+\subsection{MEG Preprocessing}
 \begin{frame}
-    \frametitle{MEG and MRI Preprocessing}
-    De-noise
+    \frametitle{MEG Preprocessing}
 
-    Filter
+    \begin{itemize}
+        \item [Software] The MEG data were preprocessed using \hyperlink{https://mne.tools/stable/index.html}{\emph{MNE}} software.
+        \item [De-noise] Suppressing artificial noise using ICA method. The artificial sources were zeroed out from raw data.
+        \item [Filter] The bands used in this research were Delta, Theta , Alpha bands, and two custom bands: U07 and U30 band.
+    \end{itemize}
+
+    \begin{table}[t]
+        \caption{Filter bands}
+        \begin{tabular}{|l|l|}
+            \hline
+            \textbf{Filter Name} & \textbf{Freq band} \\
+            \hline
+            Delta                & $1 - 4 Hz$         \\
+            Theta                & $4 - 7 Hz$         \\
+            Alpha                & $8 - 12 Hz$        \\
+            \hline
+            U07                  & $0.1 - 7 Hz$       \\
+            U30                  & $0.1 - 30 Hz$      \\
+            \hline
+        \end{tabular}
+    \end{table}
+
 \end{frame}
 
 \subsection{MVPA}
 \begin{frame}
     \frametitle{MVPA}
-    Segment
-
-    Spatial filter
-
-    SVM
+    \begin{itemize}
+        \item [Feature] Feature extraction was applied to training data, using xDAWN algorithm.
+              Number of components was set as $6$.
+        \item [Classifier] Support Vector Machine (SVM) was applied as classifier.
+        \item [Validation] The MVPA was applied in a 10-folder cross-validation protocol.
+              In each folder, we use one run as testing data and others as training data.
+    \end{itemize}
 \end{frame}
 
 \subsection{Cortical Neuronal Activation Estimation}
 \begin{frame}
     \frametitle{Cortical Neuronal Activation Estimation}
-    Alignment
 
-    Source space 'oct6'
+    \begin{itemize}
+        \item [Surfaces] The subject-specific cortical surfaces were build based on the MRI data using \hyperlink{https://surfer.nmr.mgh.harvard.edu/}{\emph{freesurfer}} software.
+        \item [Model] A forward model was calculated to project the MEG data into cortical surfaces using the \emph{'oct6'} space.
+    \end{itemize}
+
 \end{frame}
 
 % ------------------------------------------------------------------------
