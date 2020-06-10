@@ -1,7 +1,9 @@
-\documentclass{beamer}
+\documentclass[aspectratio=169]{beamer}
 
 \usepackage{beamerthemeshadow}
 \usepackage[utf8]{inputenc}
+
+\usepackage{dblfloatfix}
 
 \usetheme{Warsaw}
 % \usecolortheme{spruce}
@@ -45,7 +47,11 @@
     \frametitle{Introduction}
     Background
 
-    Rapid serial visual presentation (RSVP) has been widely used in brain-computer interface (BCI) as a high efficient paradigm [1]. RSVP-BCI has been applied in many areas such as data categorization [2], face recognition [3] ,speller [4] and website evaluation [5].
+    \begin{itemize}
+        \item Rapid serial visual presentation (RSVP) has been widely used in brain-computer interface (BCI) as a high efficient paradigm.
+        \item RSVP-BCI has been applied in many areas such as data categorization, face recognition,speller and website evaluation.
+    \end{itemize}
+
 \end{frame}
 
 \begin{frame}
@@ -70,7 +76,7 @@
 \end{frame}
 
 % ------------------------------------------------------------------------
-\section{Experiment}
+\section{Experiment and Methods}
 \begin{frame}[plain]
     \frametitle{Table of Contents}
     \tableofcontents[currentsection, hideothersubsections]
@@ -79,13 +85,28 @@
 \subsection{Task Design}
 \begin{frame}
     \frametitle{Task Design}
-
     \begin{itemize}
-        \item [Subjects] Recruited 10 college students (7 males and 3 females, aged 23.79±3.6).
-        \item [Design] During a block, 100 pictures were shown to the subject in random ordered sequences at a rate of 10 Hz.
-        \item [Ratio] The chance of target pictures (odd ball) was set to 4\%.
+        \item Recruited 10 college students (7 males and 3 females, aged 23.79±3.6).
+        \item During a block, 100 pictures were shown to the subject in random ordered sequences at a rate of 10 Hz.
+        \item The chance of target pictures (odd ball) was set to 4\%.
     \end{itemize}
 
+    \begin{columns}
+        \column{0.5\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.15]{figures/raws/image_0006.jpg}
+            \caption{Target picture}
+        \end{figure}
+
+        \column{0.5\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.15]{figures/raws/image_0014.jpg}
+            \caption{Non-target picture}
+        \end{figure}
+
+    \end{columns}
 \end{frame}
 
 \subsection{MEG and MRI acquisition}
@@ -93,57 +114,88 @@
     \frametitle{MEG and MRI acquisition}
 
     \begin{itemize}
-        \item [MEG] MEG data were scanned with a whole-head CTF MEG system with 272 channels (MISL-CTF DSQ-3500, Vancouver, BC, Canada) at the MEG Center of Institute of Biophysics, Chinese Academy of Sciences.
-        \item [MRI] MRI data were scanned with a 3.0 T MRI scanner (Siemens, Germany) at the MRI Center of Institute of Biophysics, Chinese Academy of Sciences.
+        \item MEG data were scanned with a whole-head CTF MEG system with 272 channels at the MEG Center of Institute of Biophysics, Chinese Academy of Sciences.
+        \item MRI data were scanned with a 3.0 T MRI scanner.
+        \item The MRI Center of Institute of Biophysics, Chinese Academy of Sciences.
     \end{itemize}
+
+    \begin{columns}
+        \column{0.5\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.15]{figures/raws/sensors.png}
+            \caption{272 MEG sensors}
+        \end{figure}
+
+        \column{0.5\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.12]{figures/raws/75yo_male.png}
+            \caption{MRI image}
+        \end{figure}
+
+    \end{columns}
 
 \end{frame}
 
 % ------------------------------------------------------------------------
-\section{Methods}
-\begin{frame}[plain]
-    \frametitle{Table of Contents}
-    \tableofcontents[currentsection, hideothersubsections]
-\end{frame}
-
 \subsection{MEG Preprocessing}
 \begin{frame}
     \frametitle{MEG Preprocessing}
 
-    \begin{itemize}
-        \item [Software] The MEG data were preprocessed using \hyperlink{https://mne.tools/stable/index.html}{\emph{MNE}} software.
-        \item [De-noise] Suppressing artificial noise using ICA method. The artificial sources were zeroed out from raw data.
-        \item [Filter] The bands used in this research were Delta, Theta , Alpha bands, and two custom bands: U07 and U30 band.
-    \end{itemize}
+    \begin{columns}
+        \column{0.5\textwidth}
+        \begin{itemize}
+            \item The MEG data were preprocessed using \hyperlink{https://mne.tools/stable/index.html}{\emph{MNE}} software.
+            \item Suppressing artificial noise using ICA method.
+                  The artificial sources were zeroed out from raw data.
+            \item The bands used in this research were Delta, Theta, Alpha bands, and two custom bands: U07 and U30 band.
+        \end{itemize}
 
-    \begin{table}[t]
-        \caption{Filter bands}
-        \begin{tabular}{|l|l|}
-            \hline
-            \textbf{Filter Name} & \textbf{Freq band} \\
-            \hline
-            Delta                & $1 - 4 Hz$         \\
-            Theta                & $4 - 7 Hz$         \\
-            Alpha                & $8 - 12 Hz$        \\
-            \hline
-            U07                  & $0.1 - 7 Hz$       \\
-            U30                  & $0.1 - 30 Hz$      \\
-            \hline
-        \end{tabular}
-    \end{table}
+        \column{0.5\textwidth}
 
+        \begin{table}[t]
+            \caption{Filter bands}
+            \begin{tabular}{|l|l|}
+                \hline
+                \textbf{Filter Name} & \textbf{Freq band} \\
+                \hline
+                \hline
+                Delta                & $1 - 4 Hz$         \\
+                Theta                & $4 - 7 Hz$         \\
+                Alpha                & $8 - 12 Hz$        \\
+                \hline
+                \hline
+                U07                  & $0.1 - 7 Hz$       \\
+                U30                  & $0.1 - 30 Hz$      \\
+                \hline
+            \end{tabular}
+        \end{table}
+
+    \end{columns}
 \end{frame}
 
 \subsection{MVPA}
 \begin{frame}
     \frametitle{MVPA}
-    \begin{itemize}
-        \item [Feature] Feature extraction was applied to training data, using xDAWN algorithm.
-              Number of components was set as $6$.
-        \item [Classifier] Support Vector Machine (SVM) was applied as classifier.
-        \item [Validation] The MVPA was applied in a 10-folder cross-validation protocol.
-              In each folder, we use one run as testing data and others as training data.
-    \end{itemize}
+    \begin{columns}
+        \column{0.6\textwidth}
+        \begin{itemize}
+            \item Feature extraction was applied to training data, using xDAWN algorithm.
+                  Number of components was set as $6$.
+            \item Support Vector Machine (SVM) was applied as classifier.
+            \item The MVPA was applied in a 10-folder cross-validation protocol.
+                  In each folder, we use one run as testing data and others as training data.
+        \end{itemize}
+
+        \column{0.5\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.25]{figures/cv.png}
+            \caption{Cross validation process}
+        \end{figure}
+
+    \end{columns}
 \end{frame}
 
 \subsection{Cortical Neuronal Activation Estimation}
@@ -154,6 +206,31 @@
         \item [Surfaces] The subject-specific cortical surfaces were build based on the MRI data using \hyperlink{https://surfer.nmr.mgh.harvard.edu/}{\emph{freesurfer}} software.
         \item [Model] A forward model was calculated to project the MEG data into cortical surfaces using the \emph{'oct6'} space.
     \end{itemize}
+
+    \begin{columns}
+        \column{0.3\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.15]{figures/raws/OIP.jpg}
+            \caption{Surface}
+        \end{figure}
+
+        \column{0.7\textwidth}
+        \begin{table}
+            \caption{oct6 space}
+            \begin{tabular}{|c|c|}
+                \hline
+                \textbf{Spacing}                 & \textbf{Value} \\
+                \hline
+                \hline
+                Sources per hemisphere           & $4098$         \\
+                Source spacing $(mm)$            & $4.9$          \\
+                Surface area per source $(mm^2)$ & $24.0$         \\
+                \hline
+            \end{tabular}
+        \end{table}
+
+    \end{columns}
 
 \end{frame}
 
@@ -167,38 +244,73 @@
 \subsection{MEG Signal Visualization}
 \begin{frame}
     \frametitle{MEG Signal Visualization}
-    Joint plot of evoked
+    We plot the evoked response of target pictures:
 
-    U07
+    \begin{columns}
+        \column{0.6\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.4]{figures/raws/joint_U07.png}
+            \caption{Evoked of U07 band}
+        \end{figure}
 
-    U30
+        \column{0.4\textwidth}
+        \begin{figure}[!h]
+            \centering
+            \includegraphics[scale=0.3]{figures/raws/joint_U30.png}
+            \caption{Evoked of U30 band}
+        \end{figure}
+
+    \end{columns}
+
 \end{frame}
 
 \subsection{MVPA Scores}
 \begin{frame}
     \frametitle{MVPA Scores}
-    Accuracy
-
-    F1-score
-
-    Recall ratio
+    The band of \emph{U07} yields highest classification scores:
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.4]{figures/Accs_all.png}
+        \caption{Scores across different bands}
+    \end{figure}
 \end{frame}
-
 
 \subsection{MVPA Scores}
 \begin{frame}
     \frametitle{MVPA Scores}
-    Scores in temporal resolution
+    The sources in temporal resolution:
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.4]{figures/Accs_time.png}
+        \caption{Scores in temporal resolution}
+    \end{figure}
 \end{frame}
 
 \subsection{Cortical Neuronal Activation}
 \begin{frame}
     \frametitle{Cortical Neuronal Activation}
-    Evoked activations
+    The activity in surfaces:
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.3]{figures/mean.png}
+        \caption{Activity in surfaces}
+    \end{figure}
+\end{frame}
+
+\subsection{Cortical Neuronal Activation}
+\begin{frame}
+    \frametitle{Cortical Neuronal Activation}
+    The activity in surfaces:
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.35]{figures/source_both.png}
+        \caption{Activity in surfaces}
+    \end{figure}
 \end{frame}
 
 % ------------------------------------------------------------------------
-\section{Conclusion}
+\section{Conclusion and Acknowledgements}
 \begin{frame}[plain]
     \frametitle{Table of Contents}
     \tableofcontents[currentsection, hideothersubsections]
@@ -206,14 +318,11 @@
 
 \begin{frame}
     \frametitle{Conclusion}
-
-\end{frame}
-
-% ------------------------------------------------------------------------
-\section{Acknowledgements}
-\begin{frame}[plain]
-    \frametitle{Table of Contents}
-    \tableofcontents[currentsection, hideothersubsections]
+    \begin{itemize}
+        \item The temporal dynamic of target event-related responses in a static RSVP paradigm was investigated using MEG signal with different frequency bands.
+        \item The MVPA results showed that the \emph{U07} band signals $(0.1-7 Hz)$ yielded highest decoding accuracy, and further uncover the decoding power dynamic reached its peak at around $0.4$ second after target stimuli onset.
+        \item The cortical neuronal activation identified the target stimuli triggered regions, like \emph{bilateral parahippocampal cortex}, \emph{precentral gyrus} and \emph{insula cortex}.
+    \end{itemize}
 \end{frame}
 
 \begin{frame}
