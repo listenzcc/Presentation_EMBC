@@ -92,18 +92,25 @@
     \end{itemize}
 
     \begin{columns}
-        \column{0.5\textwidth}
+        \column{0.3\textwidth}
         \begin{figure}[h]
             \centering
             \includegraphics[scale=0.15]{figures/raws/image_0006.jpg}
             \caption{Target picture}
         \end{figure}
 
-        \column{0.5\textwidth}
+        \column{0.3\textwidth}
         \begin{figure}[h]
             \centering
             \includegraphics[scale=0.15]{figures/raws/image_0014.jpg}
             \caption{Non-target picture}
+        \end{figure}
+
+        \column{0.3\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.17]{figures/design.png}
+            \caption{Time line}
         \end{figure}
 
     \end{columns}
@@ -114,24 +121,31 @@
     \frametitle{MEG and MRI acquisition}
 
     \begin{itemize}
-        \item MEG data were scanned with a whole-head CTF MEG system with 272 channels at the MEG Center of Institute of Biophysics, Chinese Academy of Sciences.
+        \item MEG data were scanned with a whole-head CTF MEG system with 272 channels.
         \item MRI data were scanned with a 3.0 T MRI scanner.
         \item The MRI Center of Institute of Biophysics, Chinese Academy of Sciences.
     \end{itemize}
 
     \begin{columns}
-        \column{0.5\textwidth}
+        \column{0.3\textwidth}
         \begin{figure}[h]
             \centering
             \includegraphics[scale=0.15]{figures/raws/sensors.png}
             \caption{272 MEG sensors}
         \end{figure}
 
-        \column{0.5\textwidth}
+        \column{0.3\textwidth}
         \begin{figure}[h]
             \centering
-            \includegraphics[scale=0.12]{figures/raws/75yo_male.png}
+            \includegraphics[scale=0.15]{figures/raws/75yo_male.png}
             \caption{MRI image}
+        \end{figure}
+
+        \column{0.3\textwidth}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.12]{figures/sphx_glr_plot_eeg_no_mri_001.png}
+            \caption{Alignment}
         \end{figure}
 
     \end{columns}
@@ -203,8 +217,8 @@
     \frametitle{Cortical Neuronal Activation Estimation}
 
     \begin{itemize}
-        \item [Surfaces] The subject-specific cortical surfaces were build based on the MRI data using \hyperlink{https://surfer.nmr.mgh.harvard.edu/}{\emph{freesurfer}} software.
-        \item [Model] A forward model was calculated to project the MEG data into cortical surfaces using the \emph{'oct6'} space.
+        \item The subject-specific cortical surfaces were build based on the MRI data using \hyperlink{https://surfer.nmr.mgh.harvard.edu/}{\emph{freesurfer}} software.
+        \item A forward model was calculated to project the MEG data into cortical surfaces using the \emph{'oct6'} space.
     \end{itemize}
 
     \begin{columns}
