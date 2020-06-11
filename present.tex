@@ -51,6 +51,7 @@
 
     \begin{itemize}
         \item Rapid serial visual presentation (RSVP) has been widely used in brain-computer interface (BCI) as a high efficient paradigm.
+        \item RSVP uses odd-ball effect to detect target stimuli in rapid serial.
         \item RSVP-BCI has been applied in many areas such as data categorization, face recognition, speller and website evaluation.
     \end{itemize}
 
@@ -68,14 +69,9 @@
     \frametitle{Motivation}
 
     \begin{itemize}
-        \item Little has been known about the temporal dynamics of the neural activity that triggered by target stimuli in RSVP.
-
-              \begin{itemize}
-                  \item The waveforms and spatial patterns dynamic.
-                  \item The discriminate power dynamic.
-              \end{itemize}
-
-        \item Besides the successful engineering applications of RSVP-BCI, the underlying neural activity is still unclear.
+        \item RSVP-BCI is largely relay on the accuracy of event-related response using single trail.
+        \item The temporal dynamics of the discriminate power is still unclear.
+        \item The underlying neural activity is still unclear.
     \end{itemize}
 
     \pause
@@ -83,8 +79,8 @@
     \begin{block}{Motivation}
 
         \begin{itemize}
-            \item Increase \textbf{discriminate accuracy}.
-            \item Uncover \textbf{neural activity}.
+            \item Investigate \textbf{discriminate power dynamic}.
+            \item Investigate \textbf{neural activity}.
         \end{itemize}
 
     \end{block}
@@ -98,8 +94,8 @@
 
     \begin{itemize}
         \item Perform RSVP experiment with MEG scanning and paired MRI imaging.
-        \item Investigate the temporal dynamic of target event-related responses with different frequency bands.
-        \item Investigate the discriminate power dynamic using MVPA method.
+        \item Investigate the temporal dynamic of discriminate power using MVPA method under different frequency bands.
+        \item Investigate the underlying neural activity using paired analysis of MEG and MRI.
     \end{itemize}
 
 \end{frame}
@@ -112,14 +108,14 @@
     \tableofcontents[currentsection, hideothersubsections]
 \end{frame}
 
-\subsection{Task Design}
+\subsection{Experiment Design}
 
 \begin{frame}
-    \frametitle{Task Design}
+    \frametitle{Experiment Design}
 
     \begin{itemize}
-        \item Recruited 10 college students (7 males and 3 females, aged 23.79±3.6).
-        \item During a block, 100 street view pictures were shown to the subject in random ordered sequences at a rate of 10 Hz.
+        \item Recruited 10 college students ($7$ males and $3$ females, aged $23.79 \pm 3.6$).
+        \item Each participant perform $10$ blocks, during a block, $100$ street view pictures were shown in random order at $10 Hz$.
         \item The chance of target pictures (odd ball) was set to 4\%.
     \end{itemize}
 
@@ -159,7 +155,7 @@
 
     \begin{itemize}
         \item MEG data were scanned with a whole-head CTF MEG system with 272 channels.
-        \item MRI data were scanned with a 3.0 T MRI scanner.
+        \item MRI data were scanned with a $3.0 T$ MRI scanner.
         \item The MRI Center of Institute of Biophysics, Chinese Academy of Sciences.
     \end{itemize}
 
@@ -192,7 +188,48 @@
 
 \end{frame}
 
-% ------------------------------------------------------------------------
+\subsection{Cortical Neuronal Activation Estimation}
+
+\begin{frame}
+    \frametitle{Cortical Neuronal Activation Estimation}
+
+    \begin{itemize}
+        \item The subject-specific cortical surfaces were build based on the MRI data using \hyperlink{https://surfer.nmr.mgh.harvard.edu/}{\emph{freesurfer}} software.
+        \item A forward model was calculated to project the MEG data into cortical surfaces using the \emph{'oct6'} space.
+    \end{itemize}
+
+    \begin{columns}
+        \column{0.4\textwidth}
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.7\textwidth]{figures/raws/OIP.jpg}
+            \caption{Surface}
+        \end{figure}
+
+        \column{0.6\textwidth}
+
+        \begin{table}
+            \renewcommand{\arraystretch}{1.2}
+            \caption{oct6 space}
+
+            \begin{tabular}{|c|c|}
+                \hline
+                \textbf{Spacing}                 & \textbf{Value} \\
+                \hline
+                \hline
+                Sources per hemisphere           & $4098$         \\
+                Source spacing $(mm)$            & $4.9$          \\
+                Surface area per source $(mm^2)$ & $24.0$         \\
+                \hline
+            \end{tabular}
+
+        \end{table}
+
+    \end{columns}
+
+\end{frame}
+
 \subsection{MEG Preprocessing}
 
 \begin{frame}
@@ -246,7 +283,7 @@
         \begin{itemize}
             \item Feature extraction was applied to training data, using xDAWN algorithm.
                   Number of components was set as $6$.
-            \item Support Vector Machine (SVM) was used as classifier.
+            \item Support Vector Machine (SVM) with RBF kernel was used as classifier.
             \item The MVPA was applied in a 10-folder cross-validation protocol.
                   In each folder, we use one run as testing data and others as training data.
         \end{itemize}
@@ -263,49 +300,6 @@
 
 \end{frame}
 
-\subsection{Cortical Neuronal Activation Estimation}
-
-\begin{frame}
-    \frametitle{Cortical Neuronal Activation Estimation}
-
-    \begin{itemize}
-        \item The subject-specific cortical surfaces were build based on the MRI data using \hyperlink{https://surfer.nmr.mgh.harvard.edu/}{\emph{freesurfer}} software.
-        \item A forward model was calculated to project the MEG data into cortical surfaces using the \emph{'oct6'} space.
-    \end{itemize}
-
-    \begin{columns}
-        \column{0.4\textwidth}
-
-        \begin{figure}[h]
-            \centering
-            \includegraphics[width=0.7\textwidth]{figures/raws/OIP.jpg}
-            \caption{Surface}
-        \end{figure}
-
-        \column{0.6\textwidth}
-
-        \begin{table}
-            \renewcommand{\arraystretch}{1.2}
-            \caption{oct6 space}
-
-            \begin{tabular}{|c|c|}
-                \hline
-                \textbf{Spacing}                 & \textbf{Value} \\
-                \hline
-                \hline
-                Sources per hemisphere           & $4098$         \\
-                Source spacing $(mm)$            & $4.9$          \\
-                Surface area per source $(mm^2)$ & $24.0$         \\
-                \hline
-            \end{tabular}
-
-        \end{table}
-
-    \end{columns}
-
-\end{frame}
-
-% ------------------------------------------------------------------------
 \section{Results and Discussion}
 
 \begin{frame}[plain]
@@ -337,6 +331,34 @@
         \end{figure}
 
     \end{columns}
+
+\end{frame}
+
+\subsection{Cortical Neuronal Activation}
+
+\begin{frame}
+    \frametitle{Cortical Neuronal Activation}
+    The activity in surfaces:
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=1.0\textwidth]{figures/mean.png}
+        \caption{Activity in surfaces}
+    \end{figure}
+
+\end{frame}
+
+\subsection{Cortical Neuronal Activation}
+
+\begin{frame}
+    \frametitle{Cortical Neuronal Activation}
+    The activity in surfaces:
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=1.0\textwidth]{figures/source_both.png}
+        \caption{Activity in surfaces}
+    \end{figure}
 
 \end{frame}
 
@@ -395,34 +417,6 @@
 
 \end{frame}
 
-\subsection{Cortical Neuronal Activation}
-
-\begin{frame}
-    \frametitle{Cortical Neuronal Activation}
-    The activity in surfaces:
-
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=1.0\textwidth]{figures/mean.png}
-        \caption{Activity in surfaces}
-    \end{figure}
-
-\end{frame}
-
-\subsection{Cortical Neuronal Activation}
-
-\begin{frame}
-    \frametitle{Cortical Neuronal Activation}
-    The activity in surfaces:
-
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=1.0\textwidth]{figures/source_both.png}
-        \caption{Activity in surfaces}
-    \end{figure}
-
-\end{frame}
-
 % ------------------------------------------------------------------------
 \section{Conclusion and Acknowledgements}
 
@@ -438,7 +432,7 @@
     \begin{itemize}
         \item The temporal dynamic of target event-related responses in a static RSVP paradigm was investigated using MEG signal with different frequency bands.
         \item The MVPA results showed that the \emph{U07} band signals $(0.1-7 Hz)$ yielded highest decoding accuracy, and further uncover the decoding power dynamic reached its peak at around $0.4$ second after target stimuli onset.
-        \item The cortical neuronal activation identified the target stimuli triggered regions, like \emph{bilateral parahippocampal cortex}, \emph{precentral gyrus} and \emph{insula cortex}.
+        \item The cortical neuronal activation identified the regions activated by target pictures, like \emph{bilateral parahippocampal cortex}, \emph{precentral gyrus} and \emph{insula cortex}.
     \end{itemize}
 \end{frame}
 
