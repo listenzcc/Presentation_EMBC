@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Temporal Dynamics on Decoding Target Stimuli in Rapid Serial Visual Presentation using Magnetoencephalography</title>
+        <style>
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="temporal-dynamics-on-decoding-target-stimuli-in-rapid-serial-visual-presentation-using-magnetoencephalography">Temporal Dynamics on Decoding Target Stimuli in Rapid Serial Visual Presentation using Magnetoencephalography</h1>
+<ul>
+<li><a href="#temporal-dynamics-on-decoding-target-stimuli-in-rapid-serial-visual-presentation-using-magnetoencephalography">Temporal Dynamics on Decoding Target Stimuli in Rapid Serial Visual Presentation using Magnetoencephalography</a>
+<ul>
+<li><a href="#title-page">Title page</a></li>
+<li><a href="#table-of-contents">Table of contents</a></li>
+<li><a href="#introduction">Introduction</a>
+<ul>
+<li><a href="#background">Background</a></li>
+<li><a href="#motivation">Motivation</a></li>
+<li><a href="#this-work">This work</a></li>
+</ul>
+</li>
+<li><a href="#experiment-and-methods">Experiment and Methods</a>
+<ul>
+<li><a href="#experiment-design">Experiment Design</a></li>
+<li><a href="#meg-and-mri-acquisition">MEG and MRI acquisition</a></li>
+<li><a href="#cortical-neuronal-activation-estimation">Cortical Neuronal Activation Estimation</a></li>
+<li><a href="#meg-preprocessing">MEG Preprocessing</a></li>
+<li><a href="#mvpa">MVPA</a></li>
+</ul>
+</li>
+<li><a href="#results">Results</a>
+<ul>
+<li><a href="#meg-signal-visualization">MEG Signal Visualization</a></li>
+<li><a href="#cortical-neuronal-activation-1">Cortical Neuronal Activation 1</a></li>
+<li><a href="#cortical-neuronal-activation-2">Cortical Neuronal Activation 2</a></li>
+<li><a href="#mvpa-scores-1">MVPA scores 1</a></li>
+<li><a href="#mvpa-scores-2">MVPA scores 2</a></li>
+<li><a href="#mvpa-scores-3">MVPA scores 3</a></li>
+</ul>
+</li>
+<li><a href="#conclusion-and-acknowledgements">Conclusion and Acknowledgements</a>
+<ul>
+<li><a href="#conclusion">Conclusion</a></li>
+<li><a href="#acknowledgements">Acknowledgements</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="title-page">Title page</h2>
+<p>Hello, I am Chuncheng Zhang from Institute of Automation, Chinese Academy of Science,Beijing, China.</p>
+<p>Appreciate EMBC communicate to give me the opportunity to share my recent work.</p>
+<p>The subject I want to share today is Temporal Dynamics on Decoding Target Stimuli in Rapid Serial Visual Presentation using Magnetoencephalography.</p>
+<h2 id="table-of-contents">Table of contents</h2>
+<p>I would like to give the presentation in four part, Introduction, Experiment and Methods, Results and Conclusion.</p>
+<h2 id="introduction">Introduction</h2>
+<p>Let's start with Introduction part.</p>
+<h3 id="background">Background</h3>
+<p>Rapid serial visual presentation, known as RSVP, is a high efficient BCI paradigm.
+It has been applied in many areas such as data categorization, face recognition, speller and website evaluation.</p>
+<ul>
+<li>RSVP uses odd-ball effect, when present a rapid serial to a subject, the odd-ball stimuli will trigger certain event-related neural response.
+Since the event-related response can be detected, we can select the odd-ball stimuli based on the signal detection.</li>
+<li>If we have a sequence of stimulus with some odd-ball in it, but we don't know where they are exactly.
+So we present the sequence in rapid serial to a subject and record his neural response.
+Then we can find the odd-balls by detecting event-related response.
+That is the classic application of RSVP experiment.</li>
+</ul>
+<h3 id="motivation">Motivation</h3>
+<p>We already know the fact of odd-ball stimuli can trigger event-related neural response.
+And the detection of event-related response is key to RSVP-BCI application.</p>
+<p>However, the temporal dynamic of discriminate power and underlying neural activity is still unclear.</p>
+<p>(CLICK)</p>
+<p>As a result, the motivation of this work is to investigate them.</p>
+<h3 id="this-work">This work</h3>
+<p>In this work,</p>
+<ol>
+<li>We performed RSVP experiment, recorded MEG data when rapid serial was presenting, and took paired MRI image.</li>
+<li>We investigate underlying neural activity using paired analysis of MEG and MRI.</li>
+<li>We investigate the temporal dynamic of discriminate power using MVPA method under different frequency bands.</li>
+</ol>
+<h2 id="experiment-and-methods">Experiment and Methods</h2>
+<p>Next, I will introduce the process of experiment and analysis methods briefly.</p>
+<h3 id="experiment-design">Experiment Design</h3>
+<p>For the RSVP experiment,</p>
+<ul>
+<li>We recruited 10 college students, their age is around 23 years.</li>
+<li>Every participant perform 10 blocks RSVP experiments.</li>
+<li>In RSVP experiment, we present the subject with street-view pictures, the pictures containing human were considered as target pictures (the so-called odd-balls).</li>
+<li>In each block, 100 street view pictures were shown in random ordered at a rate of 10 Hz.</li>
+<li>The chance of target pictures was set to 4 percent.</li>
+<li>The pictures in below are the examples of target and non-target pictures.</li>
+</ul>
+<h3 id="meg-and-mri-acquisition">MEG and MRI acquisition</h3>
+<p>All the RSVP experiments were in MEG scanner,</p>
+<ul>
+<li>The participant sat in the scanner and the screen in front of them showing the stimuli pictures.</li>
+<li>The MEG scanning used a whole-head CTF MEG system with 272 channels.</li>
+</ul>
+<p>Immediately after RSVP experiment,</p>
+<ul>
+<li>we took the MRI imaging for the subject's brain using a 3.0 Tesla MRI scanner.</li>
+<li>To make sure we can align the MEG and MRI images, we marked three points on subject's nose and ears.</li>
+</ul>
+<p>The right picture shows how the MEG and MRI images were aligned using the markers.</p>
+<h3 id="cortical-neuronal-activation-estimation">Cortical Neuronal Activation Estimation</h3>
+<p>Use the paired MEG and MRI data, we estimated the cortical neuronal activation.</p>
+<ol>
+<li>The subject-specific cortical surfaces were build based on the MRI data using freesurfer software.</li>
+<li>Then a forward model was calculated to project the MEG data into cortical surfaces using the 'oct6' space.</li>
+</ol>
+<h3 id="meg-preprocessing">MEG Preprocessing</h3>
+<p>The MEG data were preprocessed using MNE software.</p>
+<ol>
+<li>
+<p>We suppressing artificial noise using ICA decomposition method.</p>
+</li>
+<li>
+<p>Then the signal were filtered into different bands for further analysis.</p>
+<ul>
+<li>The filter bands were three classic ones, Alpha, Theta and Delta bands.</li>
+<li>And two custom bands were also used in this work, they are U30 and U07 bands.</li>
+</ul>
+</li>
+</ol>
+<h3 id="mvpa">MVPA</h3>
+<p>The processed MEG data were then analysed using MVPA method.</p>
+<ol>
+<li>Firstly, the data were separated into training and testing set.
+The separation used 10-folder cross validation method.
+In each folder, data from one block were used as testing set and others were used as training set.</li>
+<li>Secondly, to enhance the signal-to-noisy rate, we training a xDAWN spatial filter, the number of components were set to 6.
+The signal were filtered by the xDAWN filter to perform feature extraction.</li>
+<li>Thirdly, SVM classifier with RBF kernel was trained as classifier.</li>
+<li>Eventually, the testing set was used to validate the classifier.
+As a result, we can obtain discriminate power based on the classification results.</li>
+</ol>
+<h2 id="results">Results</h2>
+<p>Then, let me show the results.</p>
+<h3 id="meg-signal-visualization">MEG Signal Visualization</h3>
+<p>Here we present the event-related response of target pictures.</p>
+<ul>
+<li>Note that it is the average signal of all the target response.</li>
+<li>The time limit is set from negative 0.2 seconds to positive 1.2 seconds to the onset time.</li>
+</ul>
+<p>Two facts can be obtained from the waveform,</p>
+<ol>
+<li>In U07 band, the waveform reaches its peak at around 0.4 seconds.</li>
+<li>In U30 band, the waveform shows the same trend plus some high-frequency components.</li>
+</ol>
+<h3 id="cortical-neuronal-activation-1">Cortical Neuronal Activation 1</h3>
+<p>For the cortical neuronal activation Visualization, we show the activation on cortex surface.</p>
+<ul>
+<li>
+<p>We show a bottom-up view since the activation is mainly on FFA and MT areas,
+which is Fusiform Face Area and Temporal cortex.</p>
+</li>
+<li>
+<p>You can also say it is the ventral path of visual path way,
+which is widely known as processing the context of visual stimuli.</p>
+</li>
+</ul>
+<h3 id="cortical-neuronal-activation-2">Cortical Neuronal Activation 2</h3>
+<p>Here, we also show the waveform of several brain areas.</p>
+<h3 id="mvpa-scores-1">MVPA scores 1</h3>
+<p>To evaluation the discriminate power of target stimuli,</p>
+<ul>
+<li>We used several measurements of the classification results, they are Recall-score, f1-score and Accuracy-score,</li>
+<li>In simple word, the higher value is the more confident we can select a true target picture when the classifier says it detect a target.</li>
+</ul>
+<h3 id="mvpa-scores-2">MVPA scores 2</h3>
+<p>We present the scores in bar graphs,</p>
+<ul>
+<li>The colored lines and starts on the top refers the different between the two bars is significant using t-test.</li>
+<li>It shows that the lower frequency components yield higher discriminate power.</li>
+<li>From Delta to Alpha bands, the higher frequency yields the lower power.</li>
+</ul>
+<p>For the target picture,</p>
+<ul>
+<li>The Recall score refers the ratio of the true positive in all the detected pictures;</li>
+<li>The f1 score refers the overall accuracy of the target detected.</li>
+</ul>
+<p>The accuracy score is relatively higher than the other two is because that,</p>
+<ul>
+<li>It is a measurement of classification accuracy of both target and non-target pictures,</li>
+<li>And the non-target pictures is largely out number the targets,</li>
+<li>And it is not so important since we are more interested in the discriminate power of target pictures in RSVP experiment.</li>
+<li>Also because of the imbalance of the numbers of target and non-target pictures,
+the chance level of f1-score is NOT 0.5,
+the dash line in figure a) is just for comparable for others.</li>
+</ul>
+<h3 id="mvpa-scores-3">MVPA scores 3</h3>
+<p>We present time-windowed MVPA results in this page,</p>
+<ul>
+<li>The colored curves refer the temporal dynamic of scores,</li>
+<li>The colored lines above refer the scores are significant larger than chance level using t-test.</li>
+</ul>
+<p>Look at the black one and yellow one,</p>
+<ul>
+<li>The bands of U07 and U30 also shows the highest discriminate power.</li>
+</ul>
+<p>Recall that the waveform reaches peak at around 0.4 seconds after onset,</p>
+<ul>
+<li>The scores also reaches peak at the same time.</li>
+</ul>
+<h2 id="conclusion-and-acknowledgements">Conclusion and Acknowledgements</h2>
+<p>Here we come to the conclusion.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>There are three conclusion on this work,</p>
+<ol>
+<li>The temporal dynamic of target event-related responses in a static RSVP paradigm was investigated using MEG signal with different frequency bands.</li>
+<li>The MVPA results showed that the U07 band signals yielded highest decoding accuracy, and further uncover the decoding power dynamic reached its peak at around 0.4 second after target stimuli onset.</li>
+<li>The cortical neuronal activation identified the regions that being activated by target pictures, like temporal cortex and fusiform area.</li>
+</ol>
+<h3 id="acknowledgements">Acknowledgements</h3>
+<p>Lastly, I would like to appreciate the EMBC community to give me the chance to share my work.</p>
+<p>And appreciate the grants that provide founding for the work.</p>
+
+    </body>
+    </html>
