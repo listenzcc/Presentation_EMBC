@@ -66,7 +66,7 @@
 </li>
 </ul>
 <h2 id="title-page">Title page</h2>
-<p>Hello, I am Chuncheng Zhang from Institute of Automation, Chinese Academy of Science,Beijing, China.</p>
+<p>Hello, I am Chuncheng Zhang from Institute of Automation, Chinese Academy of Science</p>
 <p>Appreciate EMBC communicate to give me the opportunity to share my recent work.</p>
 <p>The subject I want to share today is Temporal Dynamics on Decoding Target Stimuli in Rapid Serial Visual Presentation using Magnetoencephalography.</p>
 <h2 id="table-of-contents">Table of contents</h2>
@@ -102,12 +102,12 @@ And the detection of event-related response is key to RSVP-BCI application.</p>
 <h3 id="experiment-design">Experiment Design</h3>
 <p>For the RSVP experiment,</p>
 <ul>
-<li>We recruited 10 college students, their age is around 23 years.</li>
+<li>We recruited 10 college students, their ages are around 23 years old.</li>
 <li>Every participant perform 10 blocks RSVP experiments.</li>
 <li>In RSVP experiment, we present the subject with street-view pictures, the pictures containing human were considered as target pictures (the so-called odd-balls).</li>
-<li>In each block, 100 street view pictures were shown in random ordered at a rate of 10 Hz.</li>
+<li>In each block, 100 pictures were shown in random order at a rate of 10 Hz.</li>
 <li>The chance of target pictures was set to 4 percent.</li>
-<li>The pictures in below are the examples of target and non-target pictures.</li>
+<li>The pictures in below are the examples of target and non-target.</li>
 </ul>
 <h3 id="meg-and-mri-acquisition">MEG and MRI acquisition</h3>
 <p>All the RSVP experiments were in MEG scanner,</p>
@@ -117,12 +117,12 @@ And the detection of event-related response is key to RSVP-BCI application.</p>
 </ul>
 <p>Immediately after RSVP experiment,</p>
 <ul>
-<li>we took the MRI imaging for the subject's brain using a 3.0 Tesla MRI scanner.</li>
+<li>We took the MRI image of the brain using a 3.0 Tesla MRI scanner.</li>
 <li>To make sure we can align the MEG and MRI images, we marked three points on subject's nose and ears.</li>
 </ul>
 <p>The right picture shows how the MEG and MRI images were aligned using the markers.</p>
 <h3 id="cortical-neuronal-activation-estimation">Cortical Neuronal Activation Estimation</h3>
-<p>Use the paired MEG and MRI data, we estimated the cortical neuronal activation.</p>
+<p>Based on the paired MEG and MRI data, we estimated the cortical neuronal activation.</p>
 <ol>
 <li>The subject-specific cortical surfaces were build based on the MRI data using freesurfer software.</li>
 <li>Then a forward model was calculated to project the MEG data into cortical surfaces using the 'oct6' space.</li>
@@ -149,7 +149,7 @@ The separation used 10-folder cross validation method.
 In each folder, data from one block were used as testing set and others were used as training set.</li>
 <li>Secondly, to enhance the signal-to-noisy rate, we training a xDAWN spatial filter, the number of components were set to 6.
 The signal were filtered by the xDAWN filter to perform feature extraction.</li>
-<li>Thirdly, SVM classifier with RBF kernel was trained as classifier.</li>
+<li>Thirdly, SVM classifier with RBF kernel was trained.</li>
 <li>Eventually, the testing set was used to validate the classifier.
 As a result, we can obtain discriminate power based on the classification results.</li>
 </ol>
@@ -174,7 +174,7 @@ As a result, we can obtain discriminate power based on the classification result
 which is Fusiform Face Area and Temporal cortex.</p>
 </li>
 <li>
-<p>You can also say it is the ventral path of visual path way,
+<p>You can also say it is the ventral part of visual path way,
 which is widely known as processing the context of visual stimuli.</p>
 </li>
 </ul>
@@ -184,55 +184,54 @@ which is widely known as processing the context of visual stimuli.</p>
 <p>To evaluation the discriminate power of target stimuli,</p>
 <ul>
 <li>We used several measurements of the classification results, they are Recall-score, f1-score and Accuracy-score,</li>
-<li>In simple word, the higher value is the more confident we can select a true target picture when the classifier says it detect a target.</li>
-</ul>
-<h3 id="mvpa-scores-2">MVPA scores 2</h3>
-<p>We present the scores in bar graphs,</p>
-<ul>
-<li>The colored lines and starts on the top refers the different between the two bars is significant using t-test.</li>
-<li>It shows that the lower frequency components yield higher discriminate power.</li>
-<li>From Delta to Alpha bands, the higher frequency yields the lower power.</li>
-</ul>
-<p>For the target picture,</p>
+<li>In simple word, the higher value means the more confident we have when the classifier says it detect a target.</li>
+<li>For the target picture,
 <ul>
 <li>The Recall score refers the ratio of the true positive in all the detected pictures;</li>
 <li>The f1 score refers the overall accuracy of the target detected.</li>
 </ul>
-<p>The accuracy score is relatively higher than the other two is because that,</p>
+</li>
+</ul>
+<h3 id="mvpa-scores-2">MVPA scores 2</h3>
+<p>We present the scores in bar graphs,</p>
 <ul>
-<li>It is a measurement of classification accuracy of both target and non-target pictures,</li>
-<li>And the non-target pictures is largely out number the targets,</li>
-<li>And it is not so important since we are more interested in the discriminate power of target pictures in RSVP experiment.</li>
-<li>Also because of the imbalance of the numbers of target and non-target pictures,
-the chance level of f1-score is NOT 0.5,
-the dash line in figure a) is just for comparable for others.</li>
+<li>The colored lines and starts on the top refers the different between the two bars is significantly high according to p-value of t-test.</li>
+<li>It shows that the lower frequency components yield higher discriminate power.</li>
+</ul>
+<p>The accuracy score is relatively higher than the other two is because that, the non-target pictures is largely out number the targets,</p>
+<p>Also because of the imbalance of the numbers of target and non-target pictures,</p>
+<ul>
+<li>The chance level of f1-score is NOT 0.5,</li>
+<li>The dash line in figure a) is just for comparable for others.</li>
 </ul>
 <h3 id="mvpa-scores-3">MVPA scores 3</h3>
 <p>We present time-windowed MVPA results in this page,</p>
 <ul>
 <li>The colored curves refer the temporal dynamic of scores,</li>
-<li>The colored lines above refer the scores are significant larger than chance level using t-test.</li>
+<li>The colored lines above refer the scores at these time points are significant larger than chance level according to p-value of t-test.</li>
 </ul>
-<p>Look at the black one and yellow one,</p>
+<p>Look at the black and yellow curves,</p>
 <ul>
-<li>The bands of U07 and U30 also shows the highest discriminate power.</li>
-</ul>
-<p>Recall that the waveform reaches peak at around 0.4 seconds after onset,</p>
-<ul>
-<li>The scores also reaches peak at the same time.</li>
+<li>
+<p>The bands of U07 and U30 also shows the highest discriminate power.</p>
+</li>
+<li>
+<p>Recall that the waveform reaches peak at around 0.4 seconds after onset,
+The scores also reaches peak at the same time.</p>
+</li>
 </ul>
 <h2 id="conclusion-and-acknowledgements">Conclusion and Acknowledgements</h2>
 <p>Here we come to the conclusion.</p>
 <h3 id="conclusion">Conclusion</h3>
 <p>There are three conclusion on this work,</p>
 <ol>
-<li>The temporal dynamic of target event-related responses in a static RSVP paradigm was investigated using MEG signal with different frequency bands.</li>
+<li>The temporal dynamic of RSVP target response was investigated using MEG signal with different frequency bands.</li>
 <li>The MVPA results showed that the U07 band signals yielded highest decoding accuracy, and further uncover the decoding power dynamic reached its peak at around 0.4 second after target stimuli onset.</li>
 <li>The cortical neuronal activation identified the regions that being activated by target pictures, like temporal cortex and fusiform area.</li>
 </ol>
 <h3 id="acknowledgements">Acknowledgements</h3>
-<p>Lastly, I would like to appreciate the EMBC community to give me the chance to share my work.</p>
-<p>And appreciate the grants that provide founding for the work.</p>
+<p>Lastly, I would like to appreciate the EMBC community again to give me the chance to share my work.</p>
+<p>And appreciate the grants that support the work.</p>
 
     </body>
     </html>
